@@ -4,7 +4,8 @@ const URLWEATHER = `https://api.openweathermap.org/data/2.5/weather`;
 
 // Create a new date instance dynamically with JS
 let d = new Date();
-let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
+var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+let newDate = d.toLocaleDateString("en-US", options)
 
 // Gets data from API
 async function getData(url, APIKEY, params) {
